@@ -45,18 +45,7 @@ public class Accueil extends HttpServlet {
         
         Client c = (Client) session.get(Client.class, new Integer(1));
 
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet accueil</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet accueil at " + request.getContextPath() + c.getNom() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
