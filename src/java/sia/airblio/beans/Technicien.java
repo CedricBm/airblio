@@ -5,19 +5,24 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PreUpdate;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author CedricBm
  */
 @Entity
-public class Technicien {
+public class Technicien implements Serializable {
+
     @Id
     @GeneratedValue
     private int id;
@@ -29,8 +34,14 @@ public class Technicien {
     @Column(name = "prix_par_heure")
     private int prixParHeure;
     private String poste;
-    
+
+    @ManyToOne
+    @JoinColumn(name = "equipe_technique_id")
+    private EquipeTechnique equipeTechnique;
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -43,13 +54,6 @@ public class Technicien {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
@@ -162,5 +166,19 @@ public class Technicien {
      */
     public Date getUpdated() {
         return updated;
+    }
+
+    /**
+     * @return the equipeTechnique
+     */
+    public EquipeTechnique getEquipeTechnique() {
+        return equipeTechnique;
+    }
+
+    /**
+     * @param equipeTechnique the equipeTechnique to set
+     */
+    public void setEquipeTechnique(EquipeTechnique equipeTechnique) {
+        this.equipeTechnique = equipeTechnique;
     }
 }

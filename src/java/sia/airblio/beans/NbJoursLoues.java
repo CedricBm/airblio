@@ -22,27 +22,32 @@ import javax.persistence.Temporal;
  * @author CedricBm
  */
 @Entity
-@Table(name = "historique_deplacement_materiel")
-public class HistoriqueDeplacementMateriel implements Serializable {
+@Table(name = "nb_jours_loues")
+public class NbJoursLoues implements Serializable {
 
     @Id
     @GeneratedValue
     private int id;
-    @Column(name = "from_site")
-    private String fromSite;
-    @Column(name = "to_site")
-    private String toSite;
-    @Column(name = "date_deplacement")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateDeplacement;
-    @Column(name = "duree_en_jour")
-    private int dureeEnjour;
+    @Column(name = "nb_jours")
+    private int nbJours;
+    @Column(name = "prix_par_jours")
+    private int prixParJours;
     @Column(name = "materiel_fixed")
     private String materielFixed;
+    // Domains = [prevues, reels]
+    private String statut;
 
     @ManyToOne
     @JoinColumn(name = "materiel_id")
     private Materiel materiel;
+
+    @ManyToOne
+    @JoinColumn(name = "pv_reception_id")
+    private PVReception pvReception;
+
+    @ManyToOne
+    @JoinColumn(name = "mission_intervention_id")
+    private MissionIntervention missionIntervention;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
@@ -62,31 +67,31 @@ public class HistoriqueDeplacementMateriel implements Serializable {
     }
 
     /**
-     * @return the dateDeplacement
+     * @return the nbJours
      */
-    public Date getDateDeplacement() {
-        return dateDeplacement;
+    public int getNbJours() {
+        return nbJours;
     }
 
     /**
-     * @param dateDeplacement the dateDeplacement to set
+     * @param nbJours the nbJours to set
      */
-    public void setDateDeplacement(Date dateDeplacement) {
-        this.dateDeplacement = dateDeplacement;
+    public void setNbJours(int nbJours) {
+        this.nbJours = nbJours;
     }
 
     /**
-     * @return the dureeEnjour
+     * @return the prixParJours
      */
-    public int getDureeEnjour() {
-        return dureeEnjour;
+    public int getPrixParJours() {
+        return prixParJours;
     }
 
     /**
-     * @param dureeEnjour the dureeEnjour to set
+     * @param prixParJours the prixParJours to set
      */
-    public void setDureeEnjour(int dureeEnjour) {
-        this.dureeEnjour = dureeEnjour;
+    public void setPrixParJours(int prixParJours) {
+        this.prixParJours = prixParJours;
     }
 
     /**
@@ -118,6 +123,20 @@ public class HistoriqueDeplacementMateriel implements Serializable {
     }
 
     /**
+     * @return the statut
+     */
+    public String getStatut() {
+        return statut;
+    }
+
+    /**
+     * @param statut the statut to set
+     */
+    public void setStatut(String statut) {
+        this.statut = statut;
+    }
+
+    /**
      * @return the materiel
      */
     public Materiel getMateriel() {
@@ -132,30 +151,30 @@ public class HistoriqueDeplacementMateriel implements Serializable {
     }
 
     /**
-     * @return the fromSite
+     * @return the pvReception
      */
-    public String getFromSite() {
-        return fromSite;
+    public PVReception getPvReception() {
+        return pvReception;
     }
 
     /**
-     * @param fromSite the fromSite to set
+     * @param pvReception the pvReception to set
      */
-    public void setFromSite(String fromSite) {
-        this.fromSite = fromSite;
+    public void setPvReception(PVReception pvReception) {
+        this.pvReception = pvReception;
     }
 
     /**
-     * @return the toSite
+     * @return the missionIntervention
      */
-    public String getToSite() {
-        return toSite;
+    public MissionIntervention getMissionIntervention() {
+        return missionIntervention;
     }
 
     /**
-     * @param toSite the toSite to set
+     * @param missionIntervention the missionIntervention to set
      */
-    public void setToSite(String toSite) {
-        this.toSite = toSite;
+    public void setMissionIntervention(MissionIntervention missionIntervention) {
+        this.missionIntervention = missionIntervention;
     }
 }

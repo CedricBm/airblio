@@ -5,19 +5,28 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author CedricBm
  */
 @Entity
-public class Materiel {
+public class Materiel implements Serializable {
+
     @Id
     @GeneratedValue
     private int id;
@@ -30,11 +39,29 @@ public class Materiel {
     @Column(name = "cout_expedition")
     private int coutExpedition;
     @Column(name = "date_fin_validite")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateFinValidite;
     @Column(name = "date_derniere_inspection")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateDerniereInspection;
-    
+
+    @ManyToOne
+    @JoinColumn(name = "commande_id")
+    private Commande commande;
+
+    @ManyToOne
+    @JoinColumn(name = "site_stockage_id")
+    private SiteStockage siteStockage;
+
+    @OneToMany(mappedBy = "materiel")
+    private Set<HistoriqueDeplacementMateriel> historique;
+
+    @ManyToMany(mappedBy = "materiaux")
+    private Set<PVReception> pvsReception = new HashSet<>();
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -47,13 +74,6 @@ public class Materiel {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
@@ -166,5 +186,61 @@ public class Materiel {
      */
     public Date getUpdated() {
         return updated;
+    }
+
+    /**
+     * @return the commande
+     */
+    public Commande getCommande() {
+        return commande;
+    }
+
+    /**
+     * @param commande the commande to set
+     */
+    public void setCommande(Commande commande) {
+        this.commande = commande;
+    }
+
+    /**
+     * @return the siteStockage
+     */
+    public SiteStockage getSiteStockage() {
+        return siteStockage;
+    }
+
+    /**
+     * @param siteStockage the siteStockage to set
+     */
+    public void setSiteStockage(SiteStockage siteStockage) {
+        this.siteStockage = siteStockage;
+    }
+
+    /**
+     * @return the historique
+     */
+    public Set<HistoriqueDeplacementMateriel> getHistorique() {
+        return historique;
+    }
+
+    /**
+     * @param historique the historique to set
+     */
+    public void setHistorique(Set<HistoriqueDeplacementMateriel> historique) {
+        this.historique = historique;
+    }
+
+    /**
+     * @return the pvsReception
+     */
+    public Set<PVReception> getPvsReception() {
+        return pvsReception;
+    }
+
+    /**
+     * @param pvsReception the pvsReception to set
+     */
+    public void setPvsReception(Set<PVReception> pvsReception) {
+        this.pvsReception = pvsReception;
     }
 }

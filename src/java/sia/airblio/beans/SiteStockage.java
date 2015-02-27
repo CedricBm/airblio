@@ -5,12 +5,16 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -18,14 +22,20 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "site_stockage")
-public class SiteStockage {
+public class SiteStockage implements Serializable {
+
     @Id
     @GeneratedValue
     private int id;
     private int nom;
     private int adresse;
-    
+
+    @OneToMany(mappedBy = "siteStockage")
+    private Set<Materiel> materiauxStockes;
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -38,13 +48,6 @@ public class SiteStockage {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
@@ -87,5 +90,19 @@ public class SiteStockage {
      */
     public Date getUpdated() {
         return updated;
+    }
+
+    /**
+     * @return the materiauxStockes
+     */
+    public Set<Materiel> getMateriauxStockes() {
+        return materiauxStockes;
+    }
+
+    /**
+     * @param materiauxStockes the materiauxStockes to set
+     */
+    public void setMateriauxStockes(Set<Materiel> materiauxStockes) {
+        this.materiauxStockes = materiauxStockes;
     }
 }

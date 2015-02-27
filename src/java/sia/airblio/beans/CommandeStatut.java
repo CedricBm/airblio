@@ -5,12 +5,14 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -18,13 +20,16 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "commande_statut")
-public class CommandeStatut {
+public class CommandeStatut implements Serializable {
+
     @Id
     @GeneratedValue
     private int id;
     private String statut;
-    
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -37,13 +42,6 @@ public class CommandeStatut {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**

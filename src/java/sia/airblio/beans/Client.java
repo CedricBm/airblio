@@ -5,31 +5,44 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author CedricBm
  */
 @Entity
-public class Client {
+public class Client implements Serializable {
 
     @Id
     @GeneratedValue
     private int id;
 
     private String nom;
-
     private String telephone;
     private String adresse;
     private String email;
     private String reference;
+    private String iban;
+    private String bic;
 
+    @OneToMany(mappedBy = "client")
+    private Set<Commande> commandes;
+
+    @OneToMany(mappedBy = "client")
+    private Set<PVReception> pvsReception;
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -37,12 +50,11 @@ public class Client {
         this.updated = new Date();
     }
 
+    /**
+     * @return the id
+     */
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
@@ -116,6 +128,34 @@ public class Client {
     }
 
     /**
+     * @return the iban
+     */
+    public String getIban() {
+        return iban;
+    }
+
+    /**
+     * @param iban the iban to set
+     */
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+    /**
+     * @return the bic
+     */
+    public String getBic() {
+        return bic;
+    }
+
+    /**
+     * @param bic the bic to set
+     */
+    public void setBic(String bic) {
+        this.bic = bic;
+    }
+
+    /**
      * @return the created
      */
     public Date getCreated() {
@@ -127,6 +167,34 @@ public class Client {
      */
     public Date getUpdated() {
         return updated;
+    }
+
+    /**
+     * @return the commandes
+     */
+    public Set<Commande> getCommandes() {
+        return commandes;
+    }
+
+    /**
+     * @param commandes the commandes to set
+     */
+    public void setCommandes(Set<Commande> commandes) {
+        this.commandes = commandes;
+    }
+
+    /**
+     * @return the pvsReception
+     */
+    public Set<PVReception> getPvsReception() {
+        return pvsReception;
+    }
+
+    /**
+     * @param pvsReception the pvsReception to set
+     */
+    public void setPvsReception(Set<PVReception> pvsReception) {
+        this.pvsReception = pvsReception;
     }
 
 }

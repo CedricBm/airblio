@@ -5,13 +5,17 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -19,7 +23,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "equipe_technique")
-public class EquipeTechnique {
+public class EquipeTechnique implements Serializable {
+
     @Id
     @GeneratedValue
     private int id;
@@ -27,8 +32,22 @@ public class EquipeTechnique {
     private String localisation;
     @Column(name = "en_transit")
     private boolean enTransit;
-    
+
+    @OneToMany(mappedBy = "equipeTechnique")
+    private Set<Commande> commandes;
+
+    @OneToMany(mappedBy = "equipeTechnique")
+    private Set<PVReception> pvsReception;
+
+    @OneToMany(mappedBy = "equipeTechnique")
+    private Set<HistoriqueDeplacementEquipe> historique;
+
+    @OneToMany(mappedBy = "equipeTechnique")
+    private Set<Technicien> techniciens;
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -41,13 +60,6 @@ public class EquipeTechnique {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
@@ -104,5 +116,61 @@ public class EquipeTechnique {
      */
     public Date getUpdated() {
         return updated;
+    }
+
+    /**
+     * @return the commandes
+     */
+    public Set<Commande> getCommandes() {
+        return commandes;
+    }
+
+    /**
+     * @param commandes the commandes to set
+     */
+    public void setCommandes(Set<Commande> commandes) {
+        this.commandes = commandes;
+    }
+
+    /**
+     * @return the pvsReception
+     */
+    public Set<PVReception> getPvsReception() {
+        return pvsReception;
+    }
+
+    /**
+     * @param pvsReception the pvsReception to set
+     */
+    public void setPvsReception(Set<PVReception> pvsReception) {
+        this.pvsReception = pvsReception;
+    }
+
+    /**
+     * @return the historique
+     */
+    public Set<HistoriqueDeplacementEquipe> getHistorique() {
+        return historique;
+    }
+
+    /**
+     * @param historique the historique to set
+     */
+    public void setHistorique(Set<HistoriqueDeplacementEquipe> historique) {
+        this.historique = historique;
+    }
+
+    /**
+     * @return the techniciens
+     */
+    public Set<Technicien> getTechniciens() {
+        return techniciens;
+    }
+
+    /**
+     * @param techniciens the techniciens to set
+     */
+    public void setTechniciens(Set<Technicien> techniciens) {
+        this.techniciens = techniciens;
     }
 }

@@ -5,13 +5,17 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -19,18 +23,28 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "historique_deplacement_equipe")
-public class HistoriqueDeplacementEquipe {
+public class HistoriqueDeplacementEquipe implements Serializable {
+
     @Id
     @GeneratedValue
     private int id;
-    private String from;
-    private String to;
+    @Column(name = "from_site")
+    private String fromSite;
+    @Column(name = "de_site")
+    private String toSite;
     @Column(name = "date_deplacement")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateDeplacement;
     @Column(name = "duree_en_jour")
     private int dureeEnJour;
-    
+
+    @ManyToOne
+    @JoinColumn(name = "equipe_technique_id")
+    private EquipeTechnique equipeTechnique;
+
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date updated = new Date();
 
     @PreUpdate
@@ -43,41 +57,6 @@ public class HistoriqueDeplacementEquipe {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the from
-     */
-    public String getFrom() {
-        return from;
-    }
-
-    /**
-     * @param from the from to set
-     */
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    /**
-     * @return the to
-     */
-    public String getTo() {
-        return to;
-    }
-
-    /**
-     * @param to the to to set
-     */
-    public void setTo(String to) {
-        this.to = to;
     }
 
     /**
@@ -120,5 +99,47 @@ public class HistoriqueDeplacementEquipe {
      */
     public Date getUpdated() {
         return updated;
+    }
+
+    /**
+     * @return the equipeTechnique
+     */
+    public EquipeTechnique getEquipeTechnique() {
+        return equipeTechnique;
+    }
+
+    /**
+     * @param equipeTechnique the equipeTechnique to set
+     */
+    public void setEquipeTechnique(EquipeTechnique equipeTechnique) {
+        this.equipeTechnique = equipeTechnique;
+    }
+
+    /**
+     * @return the fromSite
+     */
+    public String getFromSite() {
+        return fromSite;
+    }
+
+    /**
+     * @param fromSite the fromSite to set
+     */
+    public void setFromSite(String fromSite) {
+        this.fromSite = fromSite;
+    }
+
+    /**
+     * @return the toSite
+     */
+    public String getToSite() {
+        return toSite;
+    }
+
+    /**
+     * @param toSite the toSite to set
+     */
+    public void setToSite(String toSite) {
+        this.toSite = toSite;
     }
 }
