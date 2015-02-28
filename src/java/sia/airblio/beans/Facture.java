@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
@@ -33,6 +34,10 @@ public class Facture implements Serializable {
     @OneToOne(optional = false)
     @JoinColumn(name = "pv_reception_id", unique = true, nullable = false, updatable = false)
     private PVReception pvReception;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
@@ -91,5 +96,19 @@ public class Facture implements Serializable {
      */
     public void setPvReception(PVReception pvReception) {
         this.pvReception = pvReception;
+    }
+
+    /**
+     * @return the client
+     */
+    public Client getClient() {
+        return client;
+    }
+
+    /**
+     * @param client the client to set
+     */
+    public void setClient(Client client) {
+        this.client = client;
     }
 }

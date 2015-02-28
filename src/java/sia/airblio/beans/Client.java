@@ -40,6 +40,9 @@ public class Client implements Serializable {
     @OneToMany(mappedBy = "client")
     private Set<PVReception> pvsReception;
 
+    @OneToMany(mappedBy = "client")
+    private Set<Facture> factures;
+
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -195,6 +198,20 @@ public class Client implements Serializable {
      */
     public void setPvsReception(Set<PVReception> pvsReception) {
         this.pvsReception = pvsReception;
+    }
+
+    /**
+     * @return the factures
+     */
+    public Set<Facture> getFactures() {
+        return factures;
+    }
+
+    /**
+     * @param factures the factures to set
+     */
+    public void setFactures(Set<Facture> factures) {
+        this.factures = factures;
     }
 
 }
