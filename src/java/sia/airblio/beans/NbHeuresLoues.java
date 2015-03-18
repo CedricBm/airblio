@@ -31,7 +31,7 @@ public class NbHeuresLoues implements Serializable {
     @Column(name = "nb_heures")
     private int nbHeures;
     @Column(name = "prix_par_heures")
-    private int prixParHeures;
+    private double prixParHeures;
     // Domains = [prevues, reels, supplementaires]
     private String statut;
 
@@ -81,14 +81,14 @@ public class NbHeuresLoues implements Serializable {
     /**
      * @return the prixParHeures
      */
-    public int getPrixParHeures() {
+    public double getPrixParHeures() {
         return prixParHeures;
     }
 
     /**
      * @param prixParHeures the prixParHeures to set
      */
-    public void setPrixParHeures(int prixParHeures) {
+    public void setPrixParHeures(double prixParHeures) {
         this.prixParHeures = prixParHeures;
     }
 

@@ -32,7 +32,7 @@ public class Technicien implements Serializable {
     private String adresse;
     private String email;
     @Column(name = "prix_par_heure")
-    private int prixParHeure;
+    private double prixParHeure;
     private String poste;
 
     @ManyToOne
@@ -129,14 +129,14 @@ public class Technicien implements Serializable {
     /**
      * @return the prixParHeure
      */
-    public int getPrixParHeure() {
+    public double getPrixParHeure() {
         return prixParHeure;
     }
 
     /**
      * @param prixParHeure the prixParHeure to set
      */
-    public void setPrixParHeure(int prixParHeure) {
+    public void setPrixParHeure(double prixParHeure) {
         this.prixParHeure = prixParHeure;
     }
 

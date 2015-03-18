@@ -27,8 +27,8 @@ public class SiteStockage implements Serializable {
     @Id
     @GeneratedValue
     private int id;
-    private int nom;
-    private int adresse;
+    private String nom;
+    private String adresse;
 
     @OneToMany(mappedBy = "siteStockage")
     private Set<Materiel> materiauxStockes;
@@ -53,28 +53,28 @@ public class SiteStockage implements Serializable {
     /**
      * @return the nom
      */
-    public int getNom() {
+    public String getNom() {
         return nom;
     }
 
     /**
      * @param nom the nom to set
      */
-    public void setNom(int nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
     /**
      * @return the adresse
      */
-    public int getAdresse() {
+    public String getAdresse() {
         return adresse;
     }
 
     /**
      * @param adresse the adresse to set
      */
-    public void setAdresse(int adresse) {
+    public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
 
