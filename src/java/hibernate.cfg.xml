@@ -24,5 +24,6 @@
         <mapping class="sia.airblio.beans.PVReception"/>
         <mapping class="sia.airblio.beans.SiteStockage"/>
         <mapping class="sia.airblio.beans.Technicien"/>
+        <mapping class="sia.airblio.beans.Utilisateur"/>
     </session-factory>
 </hibernate-configuration>

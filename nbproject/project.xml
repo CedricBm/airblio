@@ -62,6 +62,10 @@
                     <file>${file.reference.hibernate-annotations-3.2.0.ga.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+                <library dirs="200">
+                    <file>${file.reference.google-api-services-mapsengine-v1-rev59-java-1.20.0.zip}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
