@@ -29,7 +29,8 @@ public class EquipeTechnique implements Serializable {
     @GeneratedValue
     private int id;
     private String nom;
-    private String localisation;
+    private double latitude;
+    private double longitude;
     @Column(name = "en_transit")
     private boolean enTransit;
 
@@ -74,20 +75,6 @@ public class EquipeTechnique implements Serializable {
      */
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    /**
-     * @return the localisation
-     */
-    public String getLocalisation() {
-        return localisation;
-    }
-
-    /**
-     * @param localisation the localisation to set
-     */
-    public void setLocalisation(String localisation) {
-        this.localisation = localisation;
     }
 
     /**
@@ -172,5 +159,33 @@ public class EquipeTechnique implements Serializable {
      */
     public void setTechniciens(Set<Technicien> techniciens) {
         this.techniciens = techniciens;
+    }
+
+    /**
+     * @return the latitude
+     */
+    public double getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * @param latitude the latitude to set
+     */
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    /**
+     * @return the longitude
+     */
+    public double getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * @param longitude the longitude to set
+     */
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

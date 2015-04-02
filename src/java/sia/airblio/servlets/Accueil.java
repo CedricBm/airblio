@@ -33,17 +33,6 @@ public class Accueil extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Client employee = new Client();
-        employee.setNom("test");
-        session.beginTransaction();
-        session.save(employee);
-        session.getTransaction().commit();
-        
-        Client c = (Client) session.get(Client.class, new Integer(1));
-
         this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
     }
 
