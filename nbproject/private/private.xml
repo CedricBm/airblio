@@ -3,24 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/EquipeTechnique.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/CommandeStatut.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Technicien.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/HistoriqueDeplacementEquipe.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/MissionIntervention.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/HibernateUtil.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Commande.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Facture.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Materiel.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/NbJoursLoues.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/MappeMonde.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/Accueil.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/PVReception.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Client.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/HistoriqueDeplacementMateriel.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/SiteStockage.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/NbHeuresLoues.java</file>
+            <file>file:/C:/Users/Skulldy/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/Accueil.java</file>
+            <file>file:/C:/Users/Skulldy/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/MappeMonde.java</file>
+            <file>file:/C:/Users/Skulldy/Documents/NetBeansProjects/airblio/web/WEB-INF/accueil.jsp</file>
+            <file>file:/C:/Users/Skulldy/Documents/NetBeansProjects/airblio/web/WEB-INF/mappemonde.jsp</file>
         </group>
     </open-files>
 </project-private>
