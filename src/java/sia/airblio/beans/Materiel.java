@@ -19,6 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  *
@@ -67,6 +68,10 @@ public class Materiel implements Serializable {
     @PreUpdate
     public void setLastUpdate() {
         this.updated = new Date();
+    }
+
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 
     /**
@@ -243,4 +248,5 @@ public class Materiel implements Serializable {
     public void setPvsReception(Set<PVReception> pvsReception) {
         this.pvsReception = pvsReception;
     }
+
 }

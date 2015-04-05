@@ -5,6 +5,7 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import javax.persistence.Temporal;
  * @author Superced
  */
 @Entity
-public class Utilisateur {
+public class Utilisateur implements Serializable {
     
     @Id
     @GeneratedValue

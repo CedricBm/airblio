@@ -28,11 +28,14 @@ public class EquipeTechniqueForm {
         Set<Technicien> techniciens = new HashSet<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        techniciens.add((Technicien) session.load(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien1"))));
-        techniciens.add((Technicien) session.load(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien2"))));
-        techniciens.add((Technicien) session.load(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien3"))));
-        techniciens.add((Technicien) session.load(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien4"))));
-        techniciens.add((Technicien) session.load(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien5"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien1"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien2"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien3"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien4"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien5"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien6"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien7"))));
+        techniciens.add((Technicien) session.get(Technicien.class, Integer.parseInt(getValeurChamp(request, "technicien8"))));
         equipe.setTechniciens(techniciens);
         session.close();
 

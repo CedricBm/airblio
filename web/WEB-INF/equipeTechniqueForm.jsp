@@ -48,6 +48,18 @@
                 <label for="technicien5">Technicien 5 </label>
                 <input type="number" id="technicien5" name="technicien5" value="" />
                 <br />
+                
+                <label for="technicien6">Technicien 6 </label>
+                <input type="number" id="technicien6" name="technicien6" value="" />
+                <br />
+                
+                <label for="technicien7">Technicien 7 </label>
+                <input type="number" id="technicien7" name="technicien7" value="" />
+                <br />
+                
+                <label for="technicien8">Technicien 8 </label>
+                <input type="number" id="technicien8" name="technicien8" value="" />
+                <br />
 
                 <input type="submit" value="Ajouter" />
                 <br />

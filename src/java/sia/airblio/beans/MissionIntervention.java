@@ -12,6 +12,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PreUpdate;
@@ -53,8 +55,13 @@ public class MissionIntervention implements Serializable {
     private String procedureMission;
     @Column(name = "condition_particuliere")
     private String conditionParticuliere;
-
-    @OneToOne(optional = false, mappedBy = "missionIntervention")
+    private transient int nbHeure;
+    private transient int nbJour;
+    
+//    @OneToOne(fetch = FetchType.LAZY, mappedBy = "missionIntervention")
+//    @PrimaryKeyJoinColumn
+    @ManyToOne
+    @JoinColumn(name = "commande_id")
     private Commande commande;
 
     @OneToMany(mappedBy = "missionIntervention")
@@ -63,9 +70,8 @@ public class MissionIntervention implements Serializable {
     @OneToMany(mappedBy = "missionIntervention")
     private Set<NbJoursLoues> nbJoursLoues;
 
-    @OneToOne(optional = false, mappedBy = "missionIntervention")
-    private Facture facture;
-
+//    @OneToOne(optional = true, mappedBy = "missionIntervention")
+//    private Facture facture;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -321,18 +327,45 @@ public class MissionIntervention implements Serializable {
         this.nbJoursLoues = nbJoursLoues;
     }
 
+//    /**
+//     * @return the facture
+//     */
+//    public Facture getFacture() {
+//        return facture;
+//    }
+//
+//    /**
+//     * @param facture the facture to set
+//     */
+//    public void setFacture(Facture facture) {
+//        this.facture = facture;
+//    }
+
     /**
-     * @return the facture
+     * @return the nbHeure
      */
-    public Facture getFacture() {
-        return facture;
+    public int getNbHeure() {
+        return nbHeure;
     }
 
     /**
-     * @param facture the facture to set
+     * @param nbHeure the nbHeure to set
      */
-    public void setFacture(Facture facture) {
-        this.facture = facture;
+    public void setNbHeure(int nbHeure) {
+        this.nbHeure = nbHeure;
     }
 
+    /**
+     * @return the nbJour
+     */
+    public int getNbJour() {
+        return nbJour;
+    }
+
+    /**
+     * @param nbJour the nbJour to set
+     */
+    public void setNbJour(int nbJour) {
+        this.nbJour = nbJour;
+    }
 }

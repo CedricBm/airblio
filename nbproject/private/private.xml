@@ -3,21 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/EquipeTechnique.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Utilisateur.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/ClientServlet.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/web/WEB-INF/clientForm.jsp</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/forms/ClientForm.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/forms/TechnicienForm.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/TechnicienServlet.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Technicien.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/Authentification.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/web/WEB-INF/technicienForm.jsp</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/web/WEB-INF/authentification.jsp</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/web/WEB-INF/accueil.jsp</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/Accueil.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Client.java</file>
-            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/forms/EquipeTechniqueForm.java</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Commande.java</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/Materiel.java</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/servlets/MissionInterventionServlet.java</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/web/WEB-INF/missionInterventionForm.jsp</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/forms/MissionInterventionForm.java</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Superced/Documents/NetBeansProjects/airblio/src/java/sia/airblio/beans/MissionIntervention.java</file>
         </group>
     </open-files>
 </project-private>

@@ -84,8 +84,8 @@ public class PVReception implements Serializable {
     @OneToMany(mappedBy = "pvReception")
     private Set<NbJoursLoues> nbJoursLoues;
 
-    @OneToOne(optional = false, mappedBy = "pvReception")
-    private Facture facture;
+//    @OneToOne(optional = false, mappedBy = "pvReception")
+//    private Facture facture;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
@@ -384,18 +384,18 @@ public class PVReception implements Serializable {
         this.nbJoursLoues = nbJoursLoues;
     }
 
-    /**
-     * @return the facture
-     */
-    public Facture getFacture() {
-        return facture;
-    }
-
-    /**
-     * @param facture the facture to set
-     */
-    public void setFacture(Facture facture) {
-        this.facture = facture;
-    }
+//    /**
+//     * @return the facture
+//     */
+//    public Facture getFacture() {
+//        return facture;
+//    }
+//
+//    /**
+//     * @param facture the facture to set
+//     */
+//    public void setFacture(Facture facture) {
+//        this.facture = facture;
+//    }
 
 }
