@@ -29,7 +29,6 @@ public class Utilisateur implements Serializable {
     private String motDePasse;
     private String nom;
     private String prenom;
-    private String username;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
@@ -69,20 +68,6 @@ public class Utilisateur implements Serializable {
      */
     public void setPrenom(String prenom) {
         this.prenom = prenom;
-    }
-
-    /**
-     * @return the username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     /**

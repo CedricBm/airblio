@@ -11,7 +11,23 @@
         
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <c:out value="utilisation de la jstl" /><br/>
+        <h1>Airblio</h1>
+        <form method="post">
+            <fieldset>
+                <legend>Connectez-vous</legend>
+
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" value="" />
+                <br />
+                
+                <label for="password">Mot de passe </label>
+                <input type="password" id="password" name="password" value="" />
+                <br />
+
+
+                <input type="submit" value="Connection" />
+                <br />
+            </fieldset>
+        </form>
     </body>
 </html>
