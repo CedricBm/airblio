@@ -42,6 +42,6 @@ public class InscriptionServlet extends HttpServlet {
         session.getTransaction().commit();
         session.close();
         
-        response.sendRedirect("/");
+        response.sendRedirect("/airblio");
     }
 }

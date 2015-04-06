@@ -25,7 +25,7 @@ import sia.airblio.forms.MissionInterventionForm;
  *
  * @author Superced
  */
-@WebServlet(name = "MissionInterventionServlet", urlPatterns = {"/missionIntervention"})
+@WebServlet(urlPatterns = {"/member/missionIntervention"})
 public class MissionInterventionServlet extends HttpServlet {
 
     @Override

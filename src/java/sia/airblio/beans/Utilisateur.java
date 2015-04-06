@@ -83,4 +83,9 @@ public class Utilisateur implements Serializable {
     public Date getUpdated() {
         return updated;
     }
+    
+    @Override
+    public String toString() {
+        return prenom + nom;
+    }
 }

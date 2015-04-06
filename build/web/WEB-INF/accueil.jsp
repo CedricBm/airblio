@@ -12,6 +12,7 @@
     </head>
     <body>
         <h1>Airblio</h1>
+         <c:out value="${erreur}" /><br/>
         <form method="post">
             <fieldset>
                 <legend>Connectez-vous</legend>
@@ -23,7 +24,6 @@
                 <label for="password">Mot de passe </label>
                 <input type="password" id="password" name="password" value="" />
                 <br />
-
 
                 <input type="submit" value="Connection" />
                 <br />

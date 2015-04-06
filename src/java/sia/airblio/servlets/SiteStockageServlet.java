@@ -20,7 +20,7 @@ import sia.airblio.forms.SiteStockageForm;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/siteStockage"})
+@WebServlet(urlPatterns = {"/member/siteStockage"})
 public class SiteStockageServlet extends HttpServlet {
 
     @Override

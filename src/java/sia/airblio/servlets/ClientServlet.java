@@ -20,7 +20,7 @@ import sia.airblio.beans.HibernateUtil;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/client"})
+@WebServlet(urlPatterns = {"/member/client"})
 public class ClientServlet extends HttpServlet {
 
     @Override

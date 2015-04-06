@@ -22,7 +22,7 @@ import sia.airblio.forms.EquipeTechniqueForm;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/equipeTechnique"})
+@WebServlet(urlPatterns = {"/member/equipeTechnique"})
 public class EquipeTechniqueServlet extends HttpServlet {
 
     @Override

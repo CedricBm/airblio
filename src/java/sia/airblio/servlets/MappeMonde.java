@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author CedricBm
  */
-@WebServlet("/mappemonde")
+@WebServlet("/member/mappemonde")
 public class MappeMonde extends HttpServlet {
 
     /**

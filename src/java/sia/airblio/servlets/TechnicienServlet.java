@@ -20,7 +20,7 @@ import sia.airblio.beans.HibernateUtil;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/technicien"})
+@WebServlet(urlPatterns = {"/member/technicien"})
 public class TechnicienServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

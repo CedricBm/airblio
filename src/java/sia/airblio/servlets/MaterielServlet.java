@@ -20,7 +20,7 @@ import sia.airblio.forms.MaterielForm;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/materiel"})
+@WebServlet(urlPatterns = {"/member/materiel"})
 public class MaterielServlet extends HttpServlet {
 
     @Override

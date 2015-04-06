@@ -23,7 +23,7 @@ import sia.airblio.forms.CommandeForm;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/commande"})
+@WebServlet(urlPatterns = {"/member/commande"})
 public class CommandeServlet extends HttpServlet {
 
     @Override

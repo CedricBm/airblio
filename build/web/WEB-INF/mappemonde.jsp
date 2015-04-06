@@ -16,6 +16,7 @@
     </head>
 
     <body>
+        <c:out value="${user}" /><br/>
         <div id="filtre">
             <form id="filtres">
                 <input type="checkbox" name="choix1" value="1"> <label>Afficher équipes</label>

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import sia.airblio.beans.Utilisateur;
 import sia.airblio.forms.AuthentificationForm;
 
@@ -31,9 +32,15 @@ public class Accueil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         AuthentificationForm form = new AuthentificationForm();
+        HttpSession session = request.getSession();
         
         Utilisateur user = form.authentificate(request);
-        
-        response.sendRedirect("/mappemonde");
+        session.setAttribute("user", user);
+        if (user == null) {
+            request.setAttribute("erreur", "La connection a échoué!");
+            this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("/airblio/member/mappemonde");
+        }
     }
 }

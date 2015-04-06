@@ -20,7 +20,7 @@ import sia.airblio.forms.CommandeStatutForm;
  *
  * @author Superced
  */
-@WebServlet(urlPatterns = {"/commandeStatut"})
+@WebServlet(urlPatterns = {"/member/commandeStatut"})
 public class CommandeStatutServlet extends HttpServlet {
 
     @Override

@@ -24,17 +24,35 @@ public class AuthentificationForm {
         Utilisateur user = null;
 
         try {
-            Query query = session.createQuery("from utilisateur u where u.email = :email");
+            Query query = session.createQuery("from Utilisateur u where u.email = :email");
             query.setString("email", getValeurChamp(request, "email"));
+            String encryptedPassword = new String(encrypt(getValeurChamp(request, "password")));
             Iterator users = query.iterate();
-            if (users.hasNext()) {
-                user = (Utilisateur) users.next();
+            while (users.hasNext()) {
+                Utilisateur userTemp = (Utilisateur) users.next();
+                if (userTemp.getMotDePasse().equalsIgnoreCase(encryptedPassword)) {
+                    user = userTemp;
+                    break;
+                }
             }
         } finally {
             session.close();
         }
 
         return user;
+    }
+    
+    public static byte[] encrypt(String x) {
+        try {
+            java.security.MessageDigest d = null;
+            d = java.security.MessageDigest.getInstance("SHA-1");
+            d.reset();
+            d.update(x.getBytes());
+            return d.digest();
+        } catch (Throwable ex) {
+            System.err.println("Encryption failed. " + ex);
+        }
+        return null;
     }
 
     /*
