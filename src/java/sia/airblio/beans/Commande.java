@@ -15,7 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 
@@ -41,7 +40,7 @@ public class Commande implements Serializable {
     private Date debut;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fin;
-    @Column(name = "materiaux_fixed")
+    @Column(name = "materiaux_fixed", columnDefinition="TEXT")
     private String materiauxFixed;
 
     @ManyToOne
@@ -59,9 +58,11 @@ public class Commande implements Serializable {
     @JoinColumn(name = "equipe_technique_id")
     private EquipeTechnique equipeTechnique;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "mission_intervention_id", unique = true, nullable = false, updatable = false)
-    private MissionIntervention missionIntervention;
+//    @OneToOne(optional = true)
+//    @JoinColumn(name = "mission_intervention_id", unique = true, nullable = true, updatable = true)
+//    @OneToOne(fetch = FetchType.LAZY, mappedBy = "commande", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "commande")
+    private Set<MissionIntervention> missionsIntervention;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
@@ -277,16 +278,16 @@ public class Commande implements Serializable {
     }
 
     /**
-     * @return the missionIntervention
+     * @return the missionsIntervention
      */
-    public MissionIntervention getMissionIntervention() {
-        return missionIntervention;
+    public Set<MissionIntervention> getMissionsIntervention() {
+        return missionsIntervention;
     }
 
     /**
-     * @param missionIntervention the missionIntervention to set
+     * @param missionsIntervention the missionsIntervention to set
      */
-    public void setMissionIntervention(MissionIntervention missionIntervention) {
-        this.missionIntervention = missionIntervention;
+    public void setMissionsIntervention(Set<MissionIntervention> missionsIntervention) {
+        this.missionsIntervention = missionsIntervention;
     }
 }

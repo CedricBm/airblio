@@ -27,13 +27,13 @@ public class Facture implements Serializable {
     @GeneratedValue
     private int id;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "mission_intervention_id", unique = true, nullable = false, updatable = false)
-    private MissionIntervention missionIntervention;
-
-    @OneToOne(optional = false)
-    @JoinColumn(name = "pv_reception_id", unique = true, nullable = false, updatable = false)
-    private PVReception pvReception;
+//    @OneToOne(optional = false)
+//    @JoinColumn(name = "mission_intervention_id", unique = true, nullable = false, updatable = false)
+//    private MissionIntervention missionIntervention;
+//
+//    @OneToOne(optional = false)
+//    @JoinColumn(name = "pv_reception_id", unique = true, nullable = false, updatable = false)
+//    private PVReception pvReception;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -70,33 +70,33 @@ public class Facture implements Serializable {
         return updated;
     }
 
-    /**
-     * @return the missionIntervention
-     */
-    public MissionIntervention getMissionIntervention() {
-        return missionIntervention;
-    }
-
-    /**
-     * @param missionIntervention the missionIntervention to set
-     */
-    public void setMissionIntervention(MissionIntervention missionIntervention) {
-        this.missionIntervention = missionIntervention;
-    }
-
-    /**
-     * @return the pvReception
-     */
-    public PVReception getPvReception() {
-        return pvReception;
-    }
-
-    /**
-     * @param pvReception the pvReception to set
-     */
-    public void setPvReception(PVReception pvReception) {
-        this.pvReception = pvReception;
-    }
+//    /**
+//     * @return the missionIntervention
+//     */
+//    public MissionIntervention getMissionIntervention() {
+//        return missionIntervention;
+//    }
+//
+//    /**
+//     * @param missionIntervention the missionIntervention to set
+//     */
+//    public void setMissionIntervention(MissionIntervention missionIntervention) {
+//        this.missionIntervention = missionIntervention;
+//    }
+//
+//    /**
+//     * @return the pvReception
+//     */
+//    public PVReception getPvReception() {
+//        return pvReception;
+//    }
+//
+//    /**
+//     * @param pvReception the pvReception to set
+//     */
+//    public void setPvReception(PVReception pvReception) {
+//        this.pvReception = pvReception;
+//    }
 
     /**
      * @return the client

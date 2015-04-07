@@ -5,6 +5,7 @@
  */
 package sia.airblio.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import javax.persistence.Temporal;
  * @author Superced
  */
 @Entity
-public class Utilisateur {
+public class Utilisateur implements Serializable {
     
     @Id
     @GeneratedValue
@@ -28,7 +29,6 @@ public class Utilisateur {
     private String motDePasse;
     private String nom;
     private String prenom;
-    private String username;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created = new Date();
@@ -71,20 +71,6 @@ public class Utilisateur {
     }
 
     /**
-     * @return the username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
      * @return the created
      */
     public Date getCreated() {
@@ -96,5 +82,10 @@ public class Utilisateur {
      */
     public Date getUpdated() {
         return updated;
+    }
+    
+    @Override
+    public String toString() {
+        return prenom + nom;
     }
 }

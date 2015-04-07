@@ -32,7 +32,7 @@ public class NbJoursLoues implements Serializable {
     private int nbJours;
     @Column(name = "prix_par_jours")
     private double prixParJours;
-    @Column(name = "materiel_fixed")
+    @Column(name = "materiel_fixed", columnDefinition="TEXT")
     private String materielFixed;
     // Domains = [prevues, reels]
     private String statut;
