@@ -1,12 +1,6 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 function initialize() {
     var mapOptions = {
-        center: {lat: 48, lng: 2},
-        zoom: 8
+        center: {lat: 48, lng: 2}, zoom: 8
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
@@ -21,8 +15,7 @@ function initialize() {
 
     var oInfo = new google.maps.InfoWindow();
 
-    google.maps.event.addListener(oMarker, 'click', function (data) {
-        // affichage position du marker
+    google.maps.event.addListener(oMarker, 'click', function (data) {                 // affichage position du marker
         oInfo.setContent("Content perso");
         oInfo.open(map, oMarker);
     });
@@ -45,4 +38,3 @@ function chercheEquipe() {
 function chercheLieu() {
     alert("Hello! I am an alert box!!");
 }
-

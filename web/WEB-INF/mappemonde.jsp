@@ -28,53 +28,11 @@
             </form>
         </div>
         <div id="map-canvas"></div>
+
+        <script type="text/javascript" src="/airblio/js/jquery-2.1.3.min.js" ></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>  
+        <script type="text/javascript" src="/airblio/js/mappemonde.js"></script>
     </body>
 
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?sensor=false">
-    </script>  
-    <script type="text/javascript">
-        function initialize() {
-            var mapOptions = {
-                center: {lat: 48, lng: 2},
-                zoom: 8
-            };
-            var map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
-            // création de l'objet option
-            var markerOption = {
-                'position': new google.maps.LatLng(48.856667, 2.350987), // position d'ancrage du marker sur la carte
-                'map': map                                              // l'objet carte sur lequel est affiché le marker
-            };
-            // création du marker
-            var oMarker = new google.maps.Marker(markerOption);
-            oMarker.setTitle("Paris");
 
-            var oInfo = new google.maps.InfoWindow();
-
-            google.maps.event.addListener(oMarker, 'click', function (data) {
-                // affichage position du marker
-                oInfo.setContent("Content perso");
-                oInfo.open(map, oMarker);
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-        function afficheEquipe() {
-
-        }
-        function afficheMateriel() {
-
-        }
-        function afficheEquipeEnCours() {
-
-        }
-        function chercheEquipe() {
-            alert("Hello! I am an alert box!!");
-        }
-        function chercheLieu() {
-            alert("Hello! I am an alert box!!");
-        }
-    </script>
 </html>

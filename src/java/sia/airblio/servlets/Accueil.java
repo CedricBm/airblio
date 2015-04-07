@@ -19,7 +19,7 @@ import sia.airblio.forms.AuthentificationForm;
  *
  * @author CedricBm
  */
-@WebServlet("/")
+@WebServlet("/accueil")
 public class Accueil extends HttpServlet {
 
     @Override
