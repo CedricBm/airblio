@@ -14,9 +14,37 @@ function initialize() {
     oMarker.setTitle("Paris");
 
     var oInfo = new google.maps.InfoWindow();
-
-    google.maps.event.addListener(oMarker, 'click', function (data) {                 // affichage position du marker
-        oInfo.setContent("Content perso");
+    dataString = "markerID=" + 1;
+    var textInfo = "null";
+    
+    google.maps.event.addListener(oMarker, 'click', function (data) {
+        $.ajax({
+            type: "POST",
+            url: "MapEquipeTechnique",
+            data: dataString,
+           // dataType: "text",
+            //if received a response from the server
+            success: function (data, textStatus, jqXHR) {
+                //our country code was correct so we have some information to display
+                if (data.success) {
+                    //$("#ajaxResponse").html("");
+                    //$("#ajaxResponse").append("<b>Country Code:</b> " +  + "");
+                    textInfo = data.markerText;
+                }
+                //display error message
+                else {
+                   textInfo = "data failed";
+                }
+                alert("Hello! success");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                textInfo = "Something really bad happened " + jqXHR;
+                alert("Hello! error!!"+ textInfo);
+                //$("#ajaxResponse").html(jqXHR.responseText);
+            }
+        });
+        // affichage position du marker
+        oInfo.setContent(textInfo);
         oInfo.open(map, oMarker);
     });
 }
