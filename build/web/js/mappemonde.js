@@ -15,37 +15,22 @@ function initialize() {
 
     var oInfo = new google.maps.InfoWindow();
     dataString = "markerID=" + 1;
-    var textInfo = "null";
+    
     
     google.maps.event.addListener(oMarker, 'click', function (data) {
         $.ajax({
             type: "POST",
-            url: "MapEquipeTechnique",
+            url: "/airblio/member/mappemondeRequest",
             data: dataString,
-           // dataType: "text",
-            //if received a response from the server
-            success: function (data, textStatus, jqXHR) {
-                //our country code was correct so we have some information to display
+            dataType: "json",
+            
+            success: function (data) {
                 if (data.success) {
-                    //$("#ajaxResponse").html("");
-                    //$("#ajaxResponse").append("<b>Country Code:</b> " +  + "");
-                    textInfo = data.markerText;
+                    oInfo.setContent(data["5"]);
+                    oInfo.open(map, oMarker);
                 }
-                //display error message
-                else {
-                   textInfo = "data failed";
-                }
-                alert("Hello! success");
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                textInfo = "Something really bad happened " + jqXHR;
-                alert("Hello! error!!"+ textInfo);
-                //$("#ajaxResponse").html(jqXHR.responseText);
             }
         });
-        // affichage position du marker
-        oInfo.setContent(textInfo);
-        oInfo.open(map, oMarker);
     });
 }
 

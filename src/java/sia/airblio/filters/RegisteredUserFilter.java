@@ -32,7 +32,7 @@ public class RegisteredUserFilter implements Filter {
         HttpSession session = request.getSession();
 
         if (session.getAttribute("user") == null) {
-            response.sendRedirect("/airblio");
+            response.sendRedirect("/airblio/accueil");
         } else {
             chain.doFilter(request, response);
         }
