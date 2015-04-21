@@ -29,6 +29,8 @@ public class SiteStockage implements Serializable {
     private int id;
     private String nom;
     private String adresse;
+    private double latitude;
+    private double longitude;
 
     @OneToMany(mappedBy = "siteStockage")
     private Set<Materiel> materiauxStockes;
@@ -104,5 +106,33 @@ public class SiteStockage implements Serializable {
      */
     public void setMateriauxStockes(Set<Materiel> materiauxStockes) {
         this.materiauxStockes = materiauxStockes;
+    }
+
+    /**
+     * @return the latitude
+     */
+    public double getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * @param latitude the latitude to set
+     */
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    /**
+     * @return the longitude
+     */
+    public double getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * @param longitude the longitude to set
+     */
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

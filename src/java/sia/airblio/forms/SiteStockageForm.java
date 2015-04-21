@@ -18,6 +18,8 @@ public class SiteStockageForm {
         SiteStockage site = new SiteStockage();
         site.setNom(getValeurChamp(request, "nom"));
         site.setAdresse(getValeurChamp(request, "adresse"));
+        site.setLatitude(Double.parseDouble(getValeurChamp(request, "latitude")));
+        site.setLongitude(Double.parseDouble(getValeurChamp(request, "longitude")));
 
         return site;
     }
