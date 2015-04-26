@@ -1,16 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/airblio">
-    <Resource auth="Container"
-              name="jdbc/mysql"
-              type="javax.sql.DataSource"
-              driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:derby://localhost:1527/airblio"
-              username="postgres"
-              password="azerty"
-              maxIdle="10"
-              maxActive="200"
-              maxWait="5"
-              removeAbandoned="true"
-              removeAbandonedTimeout="1200"
-    />
-</Context>
+<Context antiJARLocking="true" path="/airblio"></Context>

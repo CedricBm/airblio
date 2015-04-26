@@ -8,15 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link href="<c:url value="/css/acceuil.css" />" rel="stylesheet">
     </head>
     <body>
         <h1>Airblio</h1>
          <c:out value="${erreur}" /><br/>
         <form method="post">
             <fieldset>
-                <legend>Connectez-vous</legend>
-
+                <div id="inputlabel">
                 <label for="email">Email </label>
                 <input type="email" id="email" name="email" value="" />
                 <br />
@@ -25,8 +24,9 @@
                 <input type="password" id="password" name="password" value="" />
                 <br />
 
-                <input type="submit" value="Connection" />
+                <input id="bouton" type="submit" value="Connection" />
                 <br />
+                </div>
             </fieldset>
         </form>
     </body>

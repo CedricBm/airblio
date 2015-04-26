@@ -11,14 +11,4 @@
             <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
-    <servlet>
-        <description>Get Information for the MappeMonde - jQuery Ajax Request</description>
-        <display-name>MapEquipeTechnique</display-name>
-        <servlet-name>MapEquipeTechnique</servlet-name>
-        <servlet-class>sia.airblio.servlets.MapEquipeTechnique</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>MapEquipeTechnique</servlet-name>
-        <url-pattern>/member/MapEquipeTechnique</url-pattern>
-    </servlet-mapping>
 </web-app>

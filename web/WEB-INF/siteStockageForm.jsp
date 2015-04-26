@@ -25,6 +25,14 @@
                 <input type="text" id="adresse" name="adresse" value="" />
                 <br />
                 
+                <label for="latitude">Latitude </label>
+                <input type="number" id="latitude" name="latitude" value="" />
+                <br />
+
+                <label for="longitude">Longitude </label>
+                <input type="number" id="longitude" name="longitude" value="" />
+                <br />
+                
                 <input type="submit" value="Ajouter" />
                 <br />
             </fieldset>
