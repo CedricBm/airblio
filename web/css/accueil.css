@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 26, 2015, 11:35:52 AM
+    Author     : Skulldy
+*/
+body {
+    background: rgb(00,00,77);
+    text-align: center;
+}
+html{
+    height: 100%; margin: 0px; padding: 0px;
+}
+fieldset{
+    display:flex;
+}
+form{
+display : table;
+margin :  auto;
+}
+
+#bouton{
+    background: rgb(00,00,77);
+    color : white;
+    margin-top : 10px;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+#inputlabel{
+    margin : 5px;
+}
+input{
+    margin : 5px;
+}
+label
+{
+    color: white;
+    display: block;
+    width: 150px;
+    float: left;
+    text-align: left;
+    margin-left : 10px;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+h1{
+    color: white;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-size: 150px;
+    margin-bottom: 0px;
+}
